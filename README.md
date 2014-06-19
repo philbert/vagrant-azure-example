@@ -1,7 +1,7 @@
 vagrant-azure-example
 =====================
 
-I found the documentation of how to get the vagrant-azure plugin working lacking, so here are some more complete instructions for those out there who might face similar problems.
+I found the documentation of how to get the vagrant-azure plugin working quite lacking, so here are some more complete instructions for those out there who might be starting out with Vagrant and Azure who aren't running Windows as their desktop.
 
 This project was developed on OSX Mavericks, creating an Ubuntu Trusty Tahr 14.04 LTS VM on Azure.
 
@@ -27,7 +27,7 @@ If you're using homebrew you can just perform `brew install node`. Alternatively
 #### Install Azure command line tools
 Install the Azure CLI tools `npm install azure-cli -g`. The full list of available commands can be viewed [here](http://azure.microsoft.com/en-us/documentation/articles/command-line-tools/).
 
-Instructions
+Setup Instructions
 -------------------
 Here are the directions to setup the Azure CLI tools, generate the necessary keys and find out the correct information about the Azure environment that you need for you Vagrantfile. You should perform all of the commands below.
 <ol>
@@ -54,6 +54,8 @@ Download this dummy box that vagrant need to use the azure provider.
 <li><code>vagrant box add azure https://github.com/msopentech/vagrant-azure/raw/master/dummy.box</code></li>
 </ol>
 
+Creating the box
+-------------------
 Finally you're ready to start creating your Vagrantfile. Clone this repo and update the vagrant file with the necessary details from the instructions above.
 
 | Parameter | Explanation |
@@ -66,4 +68,5 @@ Finally you're ready to start creating your Vagrantfile. Clone this repo and upd
 | config.ssh.private_key_path | your private rsa key for vagrant |
 
 Now you should be ready to create your vagrant box on Azure.
+
 `vagrant up --provider=azure`
